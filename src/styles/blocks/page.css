@@ -1,10 +1,10 @@
 .page {
   scroll-behavior: smooth;
+  font-family: Roboto, sans-serif;
 }
 
 .page-body {
   box-sizing: border-box;
-  margin: 0 auto;
   padding: 40px;
   min-width: 100%;
   background-image: url('../../img/background/clouds-cold-dark-540518.png');

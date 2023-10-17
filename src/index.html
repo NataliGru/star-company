@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Company</title>
     <link rel="icon" href="./img/icon/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/global.css" />
     <script src="scripts/main.js" defer></script>
   </head>
@@ -24,20 +30,31 @@
           </div>
 
           <div class="header-login">
-            <input class="login-input email" type="email" placeholder="Email" />
-            <input
-              class="login--input password"
-              type="password"
-              placeholder="Password"
-            />
+            <form class="login-form">
+              <input
+                class="login-input email"
+                type="email"
+                placeholder="Email"
+                autocomplete="username"
+              />
 
-            <a class="login-link" href="#">Forgot your password?</a>
+              <input
+                class="login-input password"
+                type="password"
+                placeholder="Password"
+                autocomplete="current-password"
+              />
 
-            <button class="login-button">Log in</button>
+              <button class="login-button">Log in</button>
+            </form>
 
-            <button class="login-email-error" style="display: none">
-              Please enter valid email
-            </button>
+            <div class="login-helper">
+              <button class="login-email-error">
+                Please enter valid email
+              </button>
+
+              <a class="login-password-link" href="#">Forgot your password?</a>
+            </div>
           </div>
         </div>
       </div>
@@ -46,16 +63,18 @@
     <main class="main">
       <div class="container">
         <div class="main-content">
-          <div class="main-title">
-            <h1>StarCompany DESIGNS, MANUFACTURES AND</h1>
-            <h2>Launches Advanced Rockets and Spacecrafts</h2>
+          <div class="main-title-wrapper">
+            <h1 class="main-title">StarCompany DESIGNS, MANUFACTURES AND</h1>
+            <h2 class="main-subtitle">
+              Launches Advanced Rockets and Spacecrafts
+            </h2>
           </div>
 
           <div class="main-register-form">
             <button class="register-previous-step"></button>
 
             <div class="register-step step-1">
-              <label>Who are you?</label>
+              <label class="register-label">Who are you?</label>
 
               <select name="select-position" class="step-1-select">
                 <option value="engineer">Engineer</option>
@@ -83,15 +102,24 @@
             <div class="register-step step-3">
               <label>I am from</label>
 
-              <input type="text" class="register-input location" placeholder="New Roads, 70760"/>
+              <input
+                type="text"
+                class="register-input location"
+                placeholder="New Roads, 70760"
+              />
             </div>
 
             <div class="register-step step-4">
               <label>Your email address</label>
 
-              <input type="email" class="register-input email" placeholder="Input your email"/>
+              <input
+                type="email"
+                class="register-input email"
+                placeholder="Input your email"
+                autocomplete="username"
+              />
             </div>
-            
+
             <button class="login-email-error" style="display: none">
               Please enter valid email
             </button>
@@ -99,15 +127,20 @@
             <div class="register-step step-5">
               <label>Create your password</label>
 
-              <input type="password" class="register-input password" placeholder="Create your password"/>
+              <form>
+                <input
+                  type="password"
+                  class="register-input password"
+                  placeholder="Create your password"
+                  autocomplete="new-password"
+                />
+              </form>
             </div>
 
             <button class="register-next-step"></button>
           </div>
 
-          <div class="main-progres-bar">
-
-          </div>
+          <div class="main-progres-bar"></div>
         </div>
       </div>
     </main>

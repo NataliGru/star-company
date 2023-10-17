@@ -1,0 +1,40 @@
+.header-login {
+  display: grid;
+  align-items: center;
+  gap: 5px;
+}
+
+.login-input,
+.login-email-error,
+.login-password-link{
+  box-sizing: border-box;
+  width: 200px;
+  margin-left: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+.login-email-error {
+  color: #fff;
+  background-color: red;
+  border: transparent;
+  visibility: 1;
+}
+
+.login-password-link {
+  border: transparent;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 11px;
+  cursor: pointer;
+}

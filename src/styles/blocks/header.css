@@ -1,10 +1,11 @@
 .header-content {
   display: flex;
-  justify-content: space-between;
-  height: 100px;
+  justify-content: space-around;
+  margin-bottom: 100px;
 }
 
-.logo-img, .logo-link {
+.logo-img,
+.logo-link {
   display: block;
   height: 64px;
 }
