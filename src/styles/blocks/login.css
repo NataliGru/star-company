@@ -20,7 +20,7 @@
   color: #fff;
   background-color: red;
   border: transparent;
-  visibility: 1;
+  visibility: hidden;
 }
 
 .login-password-link {

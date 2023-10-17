@@ -70,77 +70,98 @@
             </h2>
           </div>
 
-          <div class="main-register-form">
-            <button class="register-previous-step"></button>
+          <div class="main-register">
+            <button class="register-previous button">Back</button>
 
-            <div class="register-step step-1">
-              <label class="register-label">Who are you?</label>
+            <div class="register-form">
+              <div class="register-step step-1 active">
+                <label class="register-label">
+                  Who are you?
+                  <div class="custom-select">
+                    <span class="select-value">Select an option</span>
+                    <ul class="options">
+                      <li>Engineer</li>
+                      <li>Business Development Executive</li>
+                      <li>Office manager/PA</li>
+                      <li>Accountant</li>
+                      <li>VR Designer</li>
+                    </ul>
+                  </div>
+                </label>
+              </div>
 
-              <select name="select-position" class="step-1-select">
-                <option value="engineer">Engineer</option>
-                <option value="executive">
-                  Business Development Executive
-                </option>
-                <option value="manager">Office manager/PA</option>
-                <option value="accountant">Accountant</option>
-                <option value="designer">VR Designer</option>
-              </select>
-            </div>
+              <div class="register-step step-2">
+                <label class="register-label"
+                  >What is your age?
+                  <div class="custom-select">
+                    <ul class="options">
+                      <li>18</li>
+                      <li>19</li>
+                      <li>20</li>
+                      <li>21</li>
+                      <li>22</li>
+                    </ul>
+                  </div>
+                </label>
+              </div>
 
-            <div class="register-step step-2">
-              <label>What is your age?</label>
+              <div class="register-step step-3">
+                <label class="register-label">I am from</label>
 
-              <select name="select-position" class="step-2-select">
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-              </select>
-            </div>
-
-            <div class="register-step step-3">
-              <label>I am from</label>
-
-              <input
-                type="text"
-                class="register-input location"
-                placeholder="New Roads, 70760"
-              />
-            </div>
-
-            <div class="register-step step-4">
-              <label>Your email address</label>
-
-              <input
-                type="email"
-                class="register-input email"
-                placeholder="Input your email"
-                autocomplete="username"
-              />
-            </div>
-
-            <button class="login-email-error" style="display: none">
-              Please enter valid email
-            </button>
-
-            <div class="register-step step-5">
-              <label>Create your password</label>
-
-              <form>
                 <input
-                  type="password"
-                  class="register-input password"
-                  placeholder="Create your password"
-                  autocomplete="new-password"
+                  type="text"
+                  class="register-input location"
+                  placeholder="New Roads, 70760"
                 />
-              </form>
+              </div>
+
+              <div class="register-step step-4">
+                <label class="register-label">Your email address</label>
+
+                <input
+                  type="email"
+                  class="register-input email"
+                  placeholder="Input your email"
+                  autocomplete="username"
+                />
+              </div>
+
+              <button class="login-email-error" style="display: none">
+                Please enter valid email
+              </button>
+
+              <div class="register-step step-5">
+                <label class="register-label">Create your password</label>
+
+                <form>
+                  <input
+                    type="password"
+                    class="register-input password"
+                    placeholder="Create your password"
+                    autocomplete="new-password"
+                  />
+                </form>
+              </div>
             </div>
 
-            <button class="register-next-step"></button>
+            <button class="register-start button">Start now &#128504;</button>
+            <button class="register-next button">Next step</button>
           </div>
 
-          <div class="main-progres-bar"></div>
+          <div class="register-private-policy">
+            By clicking the button above you agree to our Terms of Use and
+            Privacy Policy including use of cookies and to receive newsletters,
+            account updates and offers sent by StarCompany.
+          </div>
+          
+          <div class="main-progress">
+            <ul class="progress-bar">
+              <li class="progress-item active"></li>
+              <li class="progress-item"></li>
+              <li class="progress-item"></li>
+              <li class="progress-item"></li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>

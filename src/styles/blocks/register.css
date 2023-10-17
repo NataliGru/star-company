@@ -1,0 +1,56 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  box-sizing: border-box;
+  align-self: center;
+  width: 120px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 40px;
+}
+
+.register-start {
+  background-color: green;
+  display: none;
+}
+
+.register-step {
+  display: none;
+}
+
+.register-step.active {
+  display: block;
+  width: 360px;
+}
+
+.register-label {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: grey;
+}
+
+.register-private-policy {
+  color: #fff;
+  font-size: 12px;
+  width: 360px;
+  text-align: center;
+}
