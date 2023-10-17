@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Company</title>
     <link rel="icon" href="./img/icon/favicon-32x32.png" />
-    <link rel="stylesheet" href="./styles/global.scss" />
+    <link rel="stylesheet" href="./styles/global.css" />
     <script src="scripts/main.js" defer></script>
   </head>
 
-  <body class="page__body">
+  <body class="page-body">
     <header class="header">
       <div class="container">
-        <div class="header__content"></div>
+        <div class="header-content">
+          <div class="header-logo">
+            <a href="#" class="logo-link">
+              <img
+                src="./img/logo/logo.png"
+                alt="Star Company logo"
+                class="logo-img"
+              />
+            </a>
+          </div>
+
+          <div class="header-login">
+            <input class="login-input email" type="email" placeholder="Email" />
+            <input
+              class="login--input password"
+              type="password"
+              placeholder="Password"
+            />
+
+            <a class="login-link" href="#">Forgot your password?</a>
+
+            <button class="login-button">
+              Log in
+            </button>
+
+            <button class="login-email-error">Please enter valid email</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main class="main">
       <div class="container">
-        <div class="main__content"></div>
+        <div class="main-content"></div>
       </div>
     </main>
 
     <footer class="footer">
       <div class="container">
-        <div class="footer__content"></div>
+        <div class="footer-content"></div>
       </div>
     </footer>
   </body>
