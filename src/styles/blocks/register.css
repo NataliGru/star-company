@@ -1,4 +1,5 @@
 .register-form {
+  font-family: open-sans, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,19 +10,30 @@
   box-sizing: border-box;
   align-self: center;
   width: 120px;
+  height: 40px;
   padding: 10px 20px;
-  background-color: #007bff;
   color: #fff;
-  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
+  background-color: #3594ea;
   cursor: pointer;
-  height: 40px;
+}
+
+.register-previous {
+  width: 40px;
+  padding: 0;
+  border: 2px solid #818a8d;
+  background: transparent;
+  color: #818a8d;
+  font-size: 14px;
+  line-height: 14px;
 }
 
 .register-start {
-  background-color: green;
+  background-color: #3cd242;
   display: none;
 }
 
@@ -44,13 +56,43 @@
   padding: 10px;
   color: #fff;
   border-radius: 5px;
-  font-size: 16px;
-  background-color: grey;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #818a8d;
+  margin-bottom: 10px;
+}
+
+.register-input {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #818a8d;
+  padding: 10px;
+  color: grey;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  transition: all 0.3s;
+}
+
+.register-input:focus {
+  border-color: #ccc;
+}
+
+.register-input:hover {
+  box-shadow: 0 2px 4px rgba(0 0 0 / 30%);
+  text-shadow: 0 2px 4px rgba(0 0 0 / 30%);
 }
 
 .register-private-policy {
-  color: #fff;
+  color: #818a8d;
   font-size: 12px;
   width: 360px;
   text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
 }

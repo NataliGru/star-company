@@ -10,6 +10,7 @@ const registerStep = document.querySelectorAll('.register-step');
 const backButton = document.querySelector('.register-previous');
 const nextButton = document.querySelector('.register-next');
 const startButton = document.querySelector('.register-start');
+const policy = document.querySelector('.register-private-policy');
 
 const customSelects = document.querySelectorAll('.custom-select');
 
@@ -40,14 +41,54 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// Отримуємо посилання на всі етапи
+const steps = document.querySelectorAll('.register-step');
 
-progressItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    // Зніміть активний клас з усіх елементів
-    progressItems.forEach((el) => el.classList.remove('active'));
-    // Додайте активний клас до поточного етапу та всіх попередніх
-    for (let i = 0; i <= index; i++) {
-      progressItems[i].classList.add('active');
+// Поточний активний етап (починається з першого етапу)
+let currentStep = 0;
+
+// Функція для перехіду до наступного етапу
+function goToNextStep() {
+  if (currentStep < steps.length - 1) {
+    steps[currentStep].classList.remove('active');
+    currentStep++;
+    steps[currentStep].classList.add('active');
+    updateProgressItems(currentStep); // Оновити progressItems
+  }
+}
+
+// Функція для переходу до попереднього етапу
+function goToPreviousStep() {
+  if (currentStep > 0) {
+    steps[currentStep].classList.remove('active');
+    currentStep--;
+    steps[currentStep].classList.add('active');
+    updateProgressItems(currentStep); // Оновити progressItems
+  }
+}
+
+// Обробники подій для кнопок "Next" і "Previous"
+nextButton.addEventListener('click', goToNextStep);
+backButton.addEventListener('click', goToPreviousStep);
+
+// Функція для оновлення progressItems та тексту кнопок
+function updateProgressItems(currentStep) {
+  progressItems.forEach((item, index) => {
+    if (index <= currentStep) {
+      item.classList.add('active'); // Додати активний клас для пройдених етапів
+    } else {
+      item.classList.remove('active'); // Зняти активний клас для майбутніх етапів
     }
   });
-});
+
+  if (currentStep === steps.length - 1) {
+    nextButton.style.display = "none"; // Приховати кнопку "Next" на останньому етапі
+    startButton.style.display = "block"; // Показати кнопку "Start" (якщо вона була схована)
+    policy.style.visibility = "visible"; // Показати кнопку "Start" (якщо вона була схована)
+  } else {
+    nextButton.style.display = "block"; // Показати кнопку "Next" в інших випадках
+    startButton.style.display = "none"; // Приховати кнопку "Start" (якщо вона була показана)
+    policy.style.visibility = "hidden"; // Приховати кнопку "Start" (якщо вона була показана)
+  }
+}
+

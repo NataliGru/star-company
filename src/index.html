@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Star Company</title>
     <link rel="icon" href="./img/icon/favicon-32x32.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles/global.css" />
     <script src="scripts/main.js" defer></script>
   </head>
@@ -71,7 +65,7 @@
           </div>
 
           <div class="main-register">
-            <button class="register-previous button">Back</button>
+            <button class="register-previous button">&#60;</button>
 
             <div class="register-form">
               <div class="register-step step-1 active">
@@ -94,6 +88,7 @@
                 <label class="register-label"
                   >What is your age?
                   <div class="custom-select">
+                    <span class="select-value">Select an option</span>
                     <ul class="options">
                       <li>18</li>
                       <li>19</li>
@@ -106,24 +101,24 @@
               </div>
 
               <div class="register-step step-3">
-                <label class="register-label">I am from</label>
-
+                <label class="register-label">I am from
                 <input
                   type="text"
                   class="register-input location"
                   placeholder="New Roads, 70760"
                 />
+                </label>
               </div>
 
               <div class="register-step step-4">
-                <label class="register-label">Your email address</label>
-
-                <input
-                  type="email"
-                  class="register-input email"
-                  placeholder="Input your email"
-                  autocomplete="username"
-                />
+                <label class="register-label">Your email address
+                  <input
+                    type="email"
+                    class="register-input email"
+                    placeholder="Input your email"
+                    autocomplete="username"
+                  />
+                </label>
               </div>
 
               <button class="login-email-error" style="display: none">
@@ -131,36 +126,37 @@
               </button>
 
               <div class="register-step step-5">
-                <label class="register-label">Create your password</label>
-
-                <form>
+                <label class="register-label">Create your password
                   <input
                     type="password"
                     class="register-input password"
                     placeholder="Create your password"
                     autocomplete="new-password"
                   />
-                </form>
+                </label>
               </div>
             </div>
 
             <button class="register-start button">Start now &#128504;</button>
-            <button class="register-next button">Next step</button>
+            <button class="register-next button">Next step &#62;</button>
           </div>
 
-          <div class="register-private-policy">
-            By clicking the button above you agree to our Terms of Use and
-            Privacy Policy including use of cookies and to receive newsletters,
-            account updates and offers sent by StarCompany.
-          </div>
-          
-          <div class="main-progress">
-            <ul class="progress-bar">
-              <li class="progress-item active"></li>
-              <li class="progress-item"></li>
-              <li class="progress-item"></li>
-              <li class="progress-item"></li>
-            </ul>
+          <div class="main-helper">
+            <div class="register-private-policy">
+              By clicking the button above you agree to our Terms of Use and
+              Privacy Policy including use of cookies and to receive
+              newsletters, account updates and offers sent by StarCompany.
+            </div>
+
+            <div class="register-progress">
+              <ul class="progress-bar">
+                <li class="progress-item active"></li>
+                <li class="progress-item"></li>
+                <li class="progress-item"></li>
+                <li class="progress-item"></li>
+                <li class="progress-item"></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

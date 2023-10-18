@@ -18,23 +18,36 @@
   color: #83a6e4;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 38px;
+  line-height: 38px;
 }
 
 .main-subtitle {
   margin: 0;
   color: #fff;
   font-weight: 300;
-  font-size: 32px;
-  line-height: 32px;
-  letter-spacing: 3px;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: 0.15em;
 }
 
 .main-register {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.main-helper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  padding-right: 75px;
+  gap: 20px;
 }
 
 .main-progress {

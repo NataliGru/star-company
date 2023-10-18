@@ -1,4 +1,3 @@
-
 .custom-select {
   box-sizing: border-box;
   position: relative;
@@ -6,10 +5,18 @@
   cursor: pointer;
   background-color: #fff;
   border-radius: 5px;
+  border: 2px solid #818a8d;
   padding: 10px;
   color: grey;
   width: 100%;
   text-align: center;
+  font-size: 18px;
+  font-weight: normal;
+  transition: all 0.3s;
+}
+
+.custom-select:hover {
+  box-shadow: 0 2px 4px rgba(0 0 0 / 30%);
 }
 
 .custom-select .select-value {
@@ -23,9 +30,8 @@
   width: 100%;
   left: 0;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-top: none;
-  border-radius: 0 0 5px 5px;
+  border: 2px solid #818a8d;
+  border-radius:5px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -45,4 +51,5 @@
 
 .custom-select.active .options {
   display: block;
+  border: 2px solid #818a8d;
 }
