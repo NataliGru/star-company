@@ -41,3 +41,46 @@
   font-size: 11px;
   cursor: pointer;
 }
+
+.login-helper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (576px <= width <= 1024px) {
+  .login-input,
+  .login-email-error,
+  .login-password-link {
+    font-size: 10px;
+    width: 150px;
+    margin-left: 5px;
+    padding: 10px;
+  }
+
+  .login-button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+}
+
+@media (width > 1024px) {
+  .login-input,
+  .login-email-error,
+  .login-password-link {
+    font-size: 11px;
+    width: 200px;
+    margin-left: 5px;
+    padding: 10px;
+  }
+
+  .login-button {
+    padding: 10px 20px;
+    margin-left: 5px;
+    font-size: 11px;
+  }
+
+  .login-helper {
+    flex-direction: row;
+  }
+}

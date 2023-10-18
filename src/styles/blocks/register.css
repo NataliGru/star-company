@@ -116,8 +116,101 @@
 }
 
 .register-policy-location.active,
-.register-policy-private.active, 
+.register-policy-private.active,
 .register-policy-transparent.active {
-  display: block; 
+  display: block;
 }
 
+@media (576px <= width <= 1024px) {
+  .button {
+    width: 90px;
+    height: 35px;
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .register-error {
+    font-size: 10px;
+    height: 40px;
+    width: 170px;
+    margin-left: 5px;
+    padding: 10px;
+  }
+
+  .register-previous {
+    width: 35px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .register-step.active {
+    width: 250px;
+  }
+
+  .register-label {
+    height: 90px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .register-input {
+    font-size: 18px;
+  }
+
+  .register-policy-transparent,
+  .register-policy-location,
+  .register-policy-private {
+    font-size: 12px;
+    width: 360px;
+    height: 45px;
+  }
+}
+
+@media (width > 1024px) {
+  .button {
+    width: 120px;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .register-error {
+    font-size: 12px;
+    height: 45px;
+    width: 200px;
+    margin-left: 5px;
+    padding: 10px;
+  }
+
+  .register-previous {
+    width: 40px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .register-step.active {
+    width: 360px;
+  }
+
+  .register-label {
+    height: 90px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .register-input {
+    font-size: 18px;
+  }
+
+  .register-policy-transparent,
+  .register-policy-location,
+  .register-policy-private {
+    font-size: 12px;
+    width: 360px;
+    height: 45px;
+  }
+}

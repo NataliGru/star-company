@@ -1,11 +1,35 @@
 .header-content {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 200px;
+  margin-bottom: 30px;
 }
 
 .logo-img,
 .logo-link {
   display: block;
-  height: 64px;
+  height: 40px;
+}
+
+@media (576px <= width <= 1024px) {
+  .header-content {
+    margin-bottom: 50px;
+  }
+
+  .logo-img,
+  .logo-link {
+    display: block;
+    height: 50px;
+  }
+}
+
+@media (width > 1024px) {
+  .header-content {
+    margin-bottom: 100px;
+  }
+
+  .logo-img,
+  .logo-link {
+    display: block;
+    height: 64px;
+  }
 }

@@ -2,3 +2,21 @@
   margin: 0 auto;
   padding-inline: 20px;
 }
+
+@media (576px <= width <= 1024px) {
+  .container {
+    padding-inline: 30px;
+  }
+}
+
+@media (width > 1024px) {
+  .container {
+    max-width: 1020px;
+    padding-inline: 50px;
+
+  }
+}
+
+
+/* @media (max-width: 576px) - планшет
+@media (max-width: 1024px) - Desktop */
