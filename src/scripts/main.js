@@ -30,11 +30,13 @@ let currentStep = 0;
 
 function showRegisterError(errorMessage) {
   registerError.textContent = errorMessage;
+  transparentPolicy.classList.remove('active');
   registerError.style.display = 'block';
 }
 
 function hideRegisterError() {
   registerError.style.display = 'none';
+  transparentPolicy.classList.add('active');
 }
 
 function validateCurrentStep() {
@@ -94,23 +96,28 @@ function goToPreviousStep() {
     hideRegisterError();
   }
 }
+
+function clearAllInputs() {
+  registerProfession.querySelector('.select-value').textContent =
+    'Select an option';
+  registerAge.querySelector('.select-value').textContent = 'Select an option';
+  registerEmail.value = '';
+  registerPassword.value = '';
+  registerLocation.value = '';
+}
+
 previousButton.addEventListener('click', goToPreviousStep);
 
 nextButton.addEventListener('click', goToNextStep);
 
 startButton.addEventListener('click', () => {
   if (isValidPassword(registerPassword.value)) {
-    registerProfession.querySelector('.select-value').textContent =
-      'Select an option';
-    registerAge.querySelector('.select-value').textContent = 'Select an option';
-    registerEmail.value = '';
-    registerPassword.value = '';
-
-    registerLocation.value = '';
+    clearAllInputs();
 
     steps[currentStep].classList.remove('active');
     currentStep = 0;
     steps[currentStep].classList.add('active');
+
     updateMainHelperItems(currentStep);
   } else {
     showRegisterError('Please enter a valid password');
