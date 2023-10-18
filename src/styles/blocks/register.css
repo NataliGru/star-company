@@ -22,6 +22,20 @@
   cursor: pointer;
 }
 
+.register-error {
+  display: none;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  width: 200px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #e22a32;
+}
+
 .register-previous {
   width: 40px;
   padding: 0;
@@ -88,11 +102,21 @@
   text-shadow: 0 2px 4px rgba(0 0 0 / 30%);
 }
 
-.register-private-policy {
+.register-policy-transparent,
+.register-policy-location,
+.register-policy-private {
   color: #818a8d;
   font-size: 12px;
   width: 360px;
+  height: 45px;
   text-align: center;
-  margin-bottom: 20px;
   font-weight: bold;
+  display: none;
 }
+
+.register-policy-location.active,
+.register-policy-private.active, 
+.register-policy-transparent.active {
+  display: block; 
+}
+

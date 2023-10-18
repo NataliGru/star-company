@@ -6,7 +6,6 @@
     <title>Star Company</title>
     <link rel="icon" href="./img/icon/favicon-32x32.png" />
     <link rel="stylesheet" href="./styles/global.css" />
-    <script src="scripts/main.js" defer></script>
   </head>
 
   <body class="page-body">
@@ -71,7 +70,7 @@
               <div class="register-step step-1 active">
                 <label class="register-label">
                   Who are you?
-                  <div class="custom-select">
+                  <div class="custom-select profession">
                     <span class="select-value">Select an option</span>
                     <ul class="options">
                       <li>Engineer</li>
@@ -87,7 +86,7 @@
               <div class="register-step step-2">
                 <label class="register-label"
                   >What is your age?
-                  <div class="custom-select">
+                  <div class="custom-select age">
                     <span class="select-value">Select an option</span>
                     <ul class="options">
                       <li>18</li>
@@ -101,17 +100,19 @@
               </div>
 
               <div class="register-step step-3">
-                <label class="register-label">I am from
-                <input
-                  type="text"
-                  class="register-input location"
-                  placeholder="New Roads, 70760"
-                />
+                <label class="register-label"
+                  >I am from
+                  <input
+                    type="text"
+                    class="register-input location"
+                    placeholder="New Roads, 70760"
+                  />
                 </label>
               </div>
 
               <div class="register-step step-4">
-                <label class="register-label">Your email address
+                <label class="register-label"
+                  >Your email address
                   <input
                     type="email"
                     class="register-input email"
@@ -121,12 +122,9 @@
                 </label>
               </div>
 
-              <button class="login-email-error" style="display: none">
-                Please enter valid email
-              </button>
-
               <div class="register-step step-5">
-                <label class="register-label">Create your password
+                <label class="register-label"
+                  >Create your password
                   <input
                     type="password"
                     class="register-input password"
@@ -142,11 +140,20 @@
           </div>
 
           <div class="main-helper">
-            <div class="register-private-policy">
+            <div class="register-policy-transparent active"></div>
+            <div class="register-policy-location">
+              E.g.: New Roads or 70760 We don’t use postal addresses to contact
+              members directly!
+            </div>
+
+            <div class="register-policy-private">
               By clicking the button above you agree to our Terms of Use and
               Privacy Policy including use of cookies and to receive
               newsletters, account updates and offers sent by StarCompany.
             </div>
+
+            <button class="register-error">
+            </button>
 
             <div class="register-progress">
               <ul class="progress-bar">
@@ -167,5 +174,9 @@
         <div class="footer-content"></div>
       </div>
     </footer>
+    
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/logIn.js"></script>
+    <script type="module" src="./scripts/customSelects.js"></script>
   </body>
 </html>

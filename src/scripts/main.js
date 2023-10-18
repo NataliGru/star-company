@@ -1,94 +1,150 @@
-'use strict';
+import {
+  isValidEmail,
+  isValidPassword,
+  isValidSelection,
+  isValidLocation,
+} from './validation.js';
 
-const loginEmail = document.querySelector('.login-input.email');
-const loginPassword = document.querySelector('.login-input.password');
-const loginEmailError = document.querySelector('.login-email-error');
-const loginPasswordRemainder = document.querySelector('.login-password-link');
-
-const registerStep = document.querySelectorAll('.register-step');
-
-const backButton = document.querySelector('.register-previous');
+const previousButton = document.querySelector('.register-previous');
 const nextButton = document.querySelector('.register-next');
 const startButton = document.querySelector('.register-start');
-const policy = document.querySelector('.register-private-policy');
 
-const customSelects = document.querySelectorAll('.custom-select');
+const registerProfession = document.querySelector('.custom-select.profession');
+const registerAge = document.querySelector('.custom-select.age');
+const registerEmail = document.querySelector('.register-input.email');
+const registerPassword = document.querySelector('.register-input.password');
+const registerLocation = document.querySelector('.register-input.location');
+const registerError = document.querySelector('.register-error');
+
+const locationPolicy = document.querySelector('.register-policy-location');
+const privatePolicy = document.querySelector('.register-policy-private');
+const transparentPolicy = document.querySelector(
+  '.register-policy-transparent',
+);
 
 const progressItems = document.querySelectorAll('.progress-item');
 
-document.addEventListener('DOMContentLoaded', function () {
-  customSelects.addEventListener('blur', function () {
-    customSelects.style.display = 'none';
-  });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  customSelects.forEach((select) => {
-    const selectValue = select.querySelector('.select-value');
-    const options = select.querySelector('.options');
-
-    selectValue.addEventListener('click', () => {
-      select.classList.toggle('active');
-    });
-
-    options.querySelectorAll('li').forEach((option) => {
-      option.addEventListener('click', () => {
-        selectValue.textContent = option.textContent;
-        select.classList.remove('active');
-      });
-    });
-  });
-});
-
-
-// Отримуємо посилання на всі етапи
 const steps = document.querySelectorAll('.register-step');
 
-// Поточний активний етап (починається з першого етапу)
 let currentStep = 0;
 
-// Функція для перехіду до наступного етапу
-function goToNextStep() {
-  if (currentStep < steps.length - 1) {
-    steps[currentStep].classList.remove('active');
-    currentStep++;
-    steps[currentStep].classList.add('active');
-    updateProgressItems(currentStep); // Оновити progressItems
+function showRegisterError(errorMessage) {
+  registerError.textContent = errorMessage;
+  registerError.style.display = 'block';
+}
+
+function hideRegisterError() {
+  registerError.style.display = 'none';
+}
+
+function validateCurrentStep() {
+  switch (currentStep) {
+    case 0:
+      return (
+        isValidSelection(
+          registerProfession.querySelector('.select-value').textContent,
+        ) || showRegisterError('Please select a valid profession')
+      );
+    case 1:
+      return (
+        isValidSelection(
+          registerAge.querySelector('.select-value').textContent,
+        ) || showRegisterError('Please select a valid age')
+      );
+    case 2:
+      return (
+        isValidLocation(registerLocation.value) ||
+        showRegisterError('Please enter a valid location')
+      );
+    case 3:
+      return (
+        isValidEmail(registerEmail.value) ||
+        showRegisterError('Please enter a valid email')
+      );
+    case 4:
+      return (
+        isValidPassword(registerPassword.value) ||
+        showRegisterError('Please enter a valid password')
+      );
+    default:
+      return true;
   }
 }
 
-// Функція для переходу до попереднього етапу
+function goToNextStep() {
+  if (currentStep <= steps.length - 1) {
+    const isValid = validateCurrentStep();
+
+    if (isValid) {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      steps[currentStep].classList.add('active');
+      updateMainHelperItems(currentStep);
+      hideRegisterError();
+    }
+  }
+}
+
 function goToPreviousStep() {
   if (currentStep > 0) {
     steps[currentStep].classList.remove('active');
     currentStep--;
     steps[currentStep].classList.add('active');
-    updateProgressItems(currentStep); // Оновити progressItems
+    updateMainHelperItems(currentStep);
+    hideRegisterError();
   }
 }
+previousButton.addEventListener('click', goToPreviousStep);
 
-// Обробники подій для кнопок "Next" і "Previous"
 nextButton.addEventListener('click', goToNextStep);
-backButton.addEventListener('click', goToPreviousStep);
 
-// Функція для оновлення progressItems та тексту кнопок
-function updateProgressItems(currentStep) {
+startButton.addEventListener('click', () => {
+  if (isValidPassword(registerPassword.value)) {
+    registerProfession.querySelector('.select-value').textContent =
+      'Select an option';
+    registerAge.querySelector('.select-value').textContent = 'Select an option';
+    registerEmail.value = '';
+    registerPassword.value = '';
+
+    registerLocation.value = '';
+
+    steps[currentStep].classList.remove('active');
+    currentStep = 0;
+    steps[currentStep].classList.add('active');
+    updateMainHelperItems(currentStep);
+  } else {
+    showRegisterError('Please enter a valid password');
+  }
+});
+
+function updateMainHelperItems(currentStep) {
   progressItems.forEach((item, index) => {
     if (index <= currentStep) {
-      item.classList.add('active'); // Додати активний клас для пройдених етапів
+      item.classList.add('active');
     } else {
-      item.classList.remove('active'); // Зняти активний клас для майбутніх етапів
+      item.classList.remove('active');
     }
   });
 
-  if (currentStep === steps.length - 1) {
-    nextButton.style.display = "none"; // Приховати кнопку "Next" на останньому етапі
-    startButton.style.display = "block"; // Показати кнопку "Start" (якщо вона була схована)
-    policy.style.visibility = "visible"; // Показати кнопку "Start" (якщо вона була схована)
+  if (currentStep === 2 || currentStep === steps.length - 1) {
+    transparentPolicy.classList.remove('active');
   } else {
-    nextButton.style.display = "block"; // Показати кнопку "Next" в інших випадках
-    startButton.style.display = "none"; // Приховати кнопку "Start" (якщо вона була показана)
-    policy.style.visibility = "hidden"; // Приховати кнопку "Start" (якщо вона була показана)
+    transparentPolicy.classList.add('active');
+  }
+
+  if (currentStep === 2) {
+    locationPolicy.classList.add('active');
+  } else {
+    locationPolicy.classList.remove('active');
+  }
+
+  if (currentStep === steps.length - 1) {
+    nextButton.style.display = 'none';
+    startButton.style.display = 'block';
+    privatePolicy.classList.add('active');
+  } else {
+    nextButton.style.display = 'block';
+    startButton.style.display = 'none';
+    privatePolicy.classList.remove('active');
   }
 }
-
