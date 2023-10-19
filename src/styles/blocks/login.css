@@ -27,6 +27,7 @@
 }
 
 .login-password-link {
+  visibility: hidden;
   border: transparent;
   color: #fff;
 }
