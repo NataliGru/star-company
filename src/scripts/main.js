@@ -30,13 +30,11 @@ let currentStep = 0;
 
 function showRegisterError(errorMessage) {
   registerError.textContent = errorMessage;
-  transparentPolicy.classList.remove('active');
-  registerError.style.display = 'block';
+  registerError.style.visibility = 'visible';
 }
 
 function hideRegisterError() {
-  registerError.style.display = 'none';
-  transparentPolicy.classList.add('active');
+  registerError.style.visibility = 'hidden';
 }
 
 function validateCurrentStep() {

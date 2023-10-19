@@ -6,31 +6,59 @@ import {
 const logInEmail = document.querySelector('.login-input.email');
 const logInPassword = document.querySelector('.login-input.password');
 const logInButton = document.querySelector('.login-button');
+const logInEmailError = document.querySelector('.login-email-error');
+const logInPasswordRemainder = document.querySelector('.login-password-link');
 
-const logInError = document.querySelector('.login-email-error');
-
-function showLogInError(errorMessage) {
-  logInError.textContent = errorMessage;
-  logInError.style.visibility = 'visible';
+function showEmailError(errorMessage) {
+  logInEmailError.textContent = errorMessage;
+  logInEmailError.style.visibility = 'visible';
 }
 
-function hideLogInError() {
-  logInError.style.visibility = 'hidden';
+function hideEmailError() {
+  logInEmailError.textContent = '';
+  logInEmailError.style.visibility = 'hidden';
 }
 
-logInButton.addEventListener('click', () => {
+function validateEmail() {
   if (!isValidEmail(logInEmail.value)) {
-    showLogInError('Please enter a valid email');
+    showEmailError('Please enter a valid email');
     return false;
+  } else {
+    hideEmailError();
+    return true;
   }
+}
 
+function validatePassword() {
   if (!isValidPassword(logInPassword.value)) {
-    showLogInError('Please enter a valid password');
+    logInPasswordRemainder.style.visibility = 'visible';
     return false;
+  } else {
+    logInPasswordRemainder.style.visibility = 'hidden';
+    return true;
   }
+}
 
-  hideLogInError();
-
+function resetForm() {
   logInEmail.value = '';
   logInPassword.value = '';
-})
+}
+
+logInEmail.addEventListener('blur', validateEmail);
+logInEmail.addEventListener('input', hideEmailError);
+
+logInPassword.addEventListener('blur', validatePassword);
+logInPassword.addEventListener('input', () => {
+  logInPasswordRemainder.style.visibility = 'hidden';
+});
+
+logInButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+
+  if (isEmailValid && isPasswordValid) {
+    hideEmailError();
+    resetForm();
+  }
+});
