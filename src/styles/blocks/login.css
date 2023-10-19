@@ -41,6 +41,12 @@
   font-size: 9px;
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  transform: scale(1.1);
+  border: 1px solid #fff;
 }
 
 .login-form,

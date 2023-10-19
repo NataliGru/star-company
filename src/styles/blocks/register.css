@@ -9,47 +9,62 @@
 .button {
   box-sizing: border-box;
   align-self: center;
-  width: 120px;
-  height: 40px;
-  padding: 10px 20px;
+  width: 70px;
+  height: 30px;
+  padding: 5px;
   color: #fff;
-  font-size: 14px;
+  font-size: 9px;
   font-weight: bold;
   text-align: center;
   border: none;
   border-radius: 5px;
   background-color: #3594ea;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .register-error {
   display: none;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 700;
-  height: 45px;
-  width: 200px;
+  height: 35px;
+  width: 150px;
   margin-left: 5px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   color: #fff;
   background-color: #e22a32;
 }
 
 .register-previous {
-  width: 40px;
+  width: 30px;
   padding: 0;
   border: 2px solid #818a8d;
   background: transparent;
   color: #818a8d;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 10px;
+  line-height: 10px;
+  transition: all 0.3s;
+}
+
+.register-previous:hover {
+  border-color: #fff;
+  color: #fff;
+  transform: scale(1.15);
 }
 
 .register-start {
   background-color: #3cd242;
   display: none;
+  transition: all 0.3s;
+}
+
+.register-start:hover,
+.register-next:hover {
+  transform: scale(1.15);
+  border: 1px solid #fff;
 }
 
 .register-step {
@@ -58,7 +73,7 @@
 
 .register-step.active {
   display: block;
-  width: 360px;
+  width: 200px;
 }
 
 .register-label {
@@ -67,14 +82,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
   padding: 10px;
   color: #fff;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   background-color: #818a8d;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .register-input {
@@ -89,7 +103,7 @@
   color: grey;
   width: 100%;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   transition: all 0.3s;
 }
@@ -108,8 +122,8 @@
 .register-policy-private {
   color: #818a8d;
   font-size: 12px;
-  width: 360px;
-  height: 45px;
+  width: 200px;
+  height: 35px;
   text-align: center;
   font-weight: bold;
   display: none;
@@ -148,7 +162,6 @@
   }
 
   .register-label {
-    height: 90px;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
@@ -163,8 +176,8 @@
   .register-policy-location,
   .register-policy-private {
     font-size: 12px;
-    width: 360px;
-    height: 45px;
+    width: 250px;
+    height: 40px;
   }
 }
 
@@ -195,7 +208,6 @@
   }
 
   .register-label {
-    height: 90px;
     padding: 10px;
     font-size: 14px;
     font-weight: bold;

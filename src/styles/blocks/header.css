@@ -11,6 +11,11 @@
 .logo-link {
   display: block;
   height: 40px;
+  transition: all 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.15);
 }
 
 @media (576px <= width <= 1024px) {
@@ -29,9 +34,8 @@
 @media (width > 1024px) {
   .header-content {
     flex-direction: row;
-    margin-bottom: 100px;
-  justify-content: center;
-
+    justify-content: center;
+    margin-bottom: 75px;
   }
 
   .logo-img,
